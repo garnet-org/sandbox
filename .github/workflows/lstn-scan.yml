@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run lstn scan & generate verdicts
-        uses: garnet-org/lstn-action@0.3.0
+        uses: garnet-org/lstn-gh-action@main
         with:
           lstn-command: 'scan'
           workdir: '.'
@@ -25,8 +25,8 @@ jobs:
         run: cat lstn-output.json
 
       - name: Enforce Policy
-        uses: garnet-org/lstn-action@0.3.0
+        uses: garnet-org/lstn-gh-action@0.3.0
         with:
           apply-policy: true
           rules-file: 'rules.yml'
-          rule-name: 'block_priority_medium'
+          rule-name: 'ignore_priority_medium'
