@@ -1,0 +1,10 @@
+{
+    "name": "lstn-action-test",
+    "version": "0.0.1",
+    "dependencies": {
+      "jq": "1.7.2",
+      "react": "18.2.0",
+      "aws-sdk": "2.1336.0"
+    }
+  }
+  

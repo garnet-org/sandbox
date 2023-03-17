@@ -1,0 +1,32 @@
+name: lstn action reference workflow
+on:
+  push:
+    branches: ['*']
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  lstn:
+    runs-on: ubuntu-latest
+    env:
+      LSTN_ENDPOINT: "https://npm.listen.dev"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run lstn scan & generate verdicts
+        uses: garnet-org/lstn-action@0.3.0
+        with:
+          lstn-command: 'scan'
+          workdir: '.'
+
+      - name: Display results
+        run: cat lstn-output.json
+
+      - name: Enforce Policy
+        uses: garnet-org/lstn-action@0.3.0
+        with:
+          apply-policy: true
+          rules-file: 'rules.yml'
+          rule-name: 'ignore_priority_medium'
