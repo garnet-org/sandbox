@@ -28,3 +28,6 @@ jobs:
           apply-policy: true
           rules-file: 'rules.yml'
           rule-name: 'ignore_priority_medium'
+          
+      - name: Run npm install
+        run: echo "Installing dependencies" && npm install .
