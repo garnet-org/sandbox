@@ -2,20 +2,18 @@ name: lstn action reference workflow
 on:
   push:
     branches: ['*']
-  pull_request_target:
+  pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
   lstn:
     runs-on: ubuntu-latest
-    env:
-      LSTN_ENDPOINT: "https://npm.listen.dev"
 
     steps:
-      - name: Checkout code
+      - name: Clone repo
         uses: actions/checkout@v3
 
-      - name: Run lstn scan & generate verdicts
+      - name: lstn scan
         uses: garnet-org/lstn-gh-action@main
         with:
           lstn-command: 'scan'
@@ -24,7 +22,7 @@ jobs:
       - name: Display results
         run: cat lstn-output.json
 
-      - name: Enforce Policy
+      - name: lstn policy
         uses: garnet-org/lstn-gh-action@main
         with:
           apply-policy: true
