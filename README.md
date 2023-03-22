@@ -1,5 +1,5 @@
 # listen.dev demos
-PoC for lstn workflows in CI
+PoCs for lstn workflows in CI
 
 ### Intro
 
