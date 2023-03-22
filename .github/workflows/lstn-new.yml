@@ -1,0 +1,19 @@
+name: lstn
+
+on:
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  lstn:
+    name: "lstn"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the source code
+        uses: actions/checkout@v3
+      - uses: listendev/action@scan
