@@ -17,9 +17,9 @@ Currently there are two ways to utilize `lstn` in your CI process:
   3) Using the node GitHub action (listendev/action@scan)
 
 
-The CLI mode works standalone--it handles all logic on the user-side, purely depends on `lstn`, and is agnostic to the CI provider being used. All of the integration boilerplate is in [`./github/workflows/lstn-cli-workflow.yml`](https://github.com/garnet-org/demos/blob/main/.github/workflows/lstn-cli-workflow.yml).
+    The CLI mode works standalone--it handles all logic on the user-side, purely depends on `lstn`, and is agnostic to the CI provider being used. All of the integration boilerplate is in [`./github/workflows/lstn-cli-workflow.yml`](https://github.com/garnet-org/demos/blob/main/.github/workflows/lstn-cli-workflow.yml).
 
-The Docker GitHub action workflow is provided through [`lstn-gh-action`](https://github.com/garnet-org/lstn-gh-action.git), which is a GitHub-native integration configurable through [`./github/workflows/lstn-docker-action-workflow.yml`](https://github.com/garnet-org/lstn-gh-action/blob/main/.github/workflows/lstn-docker-action-workflow.yml)
+    The Docker GitHub action workflow is provided through [`lstn-gh-action`](https://github.com/garnet-org/lstn-gh-action.git), which is a GitHub-native integration configurable through [`./github/workflows/lstn-docker-action-workflow.yml`](https://github.com/garnet-org/lstn-gh-action/blob/main/.github/workflows/lstn-docker-action-workflow.yml)
 
 
 ### How to invoke a scan:
