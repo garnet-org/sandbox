@@ -1,12 +1,11 @@
-name: lstn action reference workflow
+name: Example workflow using lstn Docker action
 on:
-  push:
-    branches: ['*']
+  push: 
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches: ["main"]
 
 jobs:
-  lstn:
+  lstn-docker-e2e:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +18,7 @@ jobs:
           lstn-command: 'scan'
           workdir: '.'
 
-      - name: Display results
+      - name: Display lstn verdicts
         run: cat lstn-output.json
 
       - name: lstn policy
@@ -30,4 +29,4 @@ jobs:
           rule-name: 'ignore_priority_medium'
           
       - name: Run npm install
-        run: echo "Installing dependencies" && npm install .
+        run: echo "Installing dependencies..." && npm install .

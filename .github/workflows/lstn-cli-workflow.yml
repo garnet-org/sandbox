@@ -1,0 +1,66 @@
+name: Example workflow using lstn CLI
+
+on:
+  push: 
+  pull_request:
+    branches: ["main"]
+
+env:
+  LSTN_ENDPOINT: https://npm.listen.dev
+  WORKDIR: .
+  RULES_FILE: rules.yml
+  RULE_NAME: "ignore_priority_medium"
+
+jobs:
+  lstn-cli-e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v3
+        with:
+          repository: listendev/lstn
+
+      - name: Build lstn CLI from source
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.19.4'
+          cache: true
+      - run: |
+          go build -o make/make make/main.go
+          make/make lstn
+          mv lstn /usr/local/bin/ && chmod +x /usr/local/bin/lstn
+          lstn version 
+
+      - name: Checkout the test repo
+        uses: actions/checkout@v3
+
+      - name: lstn scan
+        run: |
+          lstn scan ${{ env.WORKDIR }}
+
+      - name: Enforce lstn policy with exceptions
+        run: |
+          RULE_NAME=${{ env.RULE_NAME }}
+          RULES_FILE=${{ env.RULES_FILE }}
+          TEST_PROJECT_DIR=${{ env.WORKDIR }}
+
+          QUERY=$(yq e ".rules[] | select(.name == \"$RULE_NAME\") | .query" "$RULES_FILE")
+          BEHAVIOR=$(yq e ".rules[] | select(.name == \"$RULE_NAME\") | .behavior // \"fail\"" "$RULES_FILE")
+          lstn_output=$(lstn scan "$TEST_PROJECT_DIR" --json -q "$QUERY")
+
+          if [ -z "$lstn_output" ]; then
+              echo "No policy violation was detected for rule: $RULE_NAME". Proceeding to build.
+          else
+              case "$BEHAVIOR" in
+                silent)
+                  echo "Policy violation detected, but behavior is set to silent for rule: $RULE_NAME"
+                  ;;
+                ignore)
+                  echo "Policy violation detected, but behavior is set to ignore for rule: $RULE_NAME"
+                  ;;
+                *)
+                  echo "A policy violation was detected for rule: $RULE_NAME. Stopping the build."
+                  exit 1
+                  ;;
+              esac
+          fi
