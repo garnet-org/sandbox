@@ -7,7 +7,9 @@
     "@azure/functions": "^1.2.3",
     "@azure/identity": "^2.0.0",
     "@azure/keyvault-secrets": "^4.3.0",
-    "durable-functions": "^1.5.2"
+    "durable-functions": "^1.5.2",
+    "bluebird": "3.7.2",
+    "@tensorflow/tfjs": "4.2.0"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
