@@ -16,4 +16,4 @@ jobs:
     steps:
       - name: Check out the source code
         uses: actions/checkout@v3
-      - uses: listendev/action@scan
+      - uses: listendev/action@v1
