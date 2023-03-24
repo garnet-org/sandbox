@@ -17,3 +17,5 @@ jobs:
       - name: Check out the source code
         uses: actions/checkout@v3
       - uses: listendev/action@main
+        with: 
+          lstn_flags: "--https://npm-staging.listen.dev/"
