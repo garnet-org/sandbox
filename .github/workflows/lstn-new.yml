@@ -19,3 +19,4 @@ jobs:
       - uses: listendev/action@main
         with: 
           lstn_flags: "--endpoint=https://npm-staging.listen.dev"
+          lstn: "v0.4.0"
