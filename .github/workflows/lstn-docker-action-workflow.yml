@@ -26,7 +26,7 @@ jobs:
         with:
           apply-policy: true
           rules-file: 'rules.yml'
-          rule-name: 'ignore_priority_medium'
+          rule-name: 'block_priority_critical'
           
-      - name: Run npm install
-        run: echo "Installing dependencies..." && npm install .
+      - name: Run npm install (test)
+        run: echo "Installing dependencies..."
