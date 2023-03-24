@@ -82,5 +82,6 @@
       "standard": "^15.0.0",
       "tinyify": "^3.0.0",
       "watchify": "^3.11.1"
+      "@vue/devtools": "6.5.0"
   }
 }
