@@ -17,6 +17,3 @@ jobs:
       - name: Check out the source code
         uses: actions/checkout@v3
       - uses: listendev/action@v0.1.0
-        with: 
-          lstn_flags: "--endpoint=https://npm-staging.listen.dev"
-          lstn: "v0.4.0"
