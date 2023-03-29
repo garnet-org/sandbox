@@ -21,7 +21,7 @@ jobs:
         uses: listendev/action@v0.1.0
 
       - name: Enforce lstn policy
-        uses: garnet-org/lstn-policy@main
+        uses: garnet-org/lstn-policy@v0.0.3
         with:
           workdir: '.'
           apply-policy: true
