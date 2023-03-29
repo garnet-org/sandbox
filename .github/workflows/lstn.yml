@@ -1,6 +1,7 @@
 name: lstn
 
 on:
+  push:
   pull_request:
     branches: ["*"]
 
@@ -17,5 +18,11 @@ jobs:
       - name: Check out the source code
         uses: actions/checkout@v3
       - uses: listendev/action@v0.1.0
+
+      - name: Enforce lstn policy
+        uses: garnet-org/lstn-gh-action@0.0.1
         with:
-          flags: "--endpoint=https://npm-staging.listen.dev"
+          workdir: '.'
+          apply-policy: true
+          rules-file: 'rules.yml'
+          rule-name: 'ignore_priority_medium'
