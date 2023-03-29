@@ -1,4 +1,4 @@
-name: lstn
+name: lstn scan
 
 on:
   push:
@@ -17,10 +17,12 @@ jobs:
     steps:
       - name: Clone repo
         uses: actions/checkout@v3
-      - uses: listendev/action@v0.1.0
+      
+      - name: Run lstn scan
+        uses: listendev/action@v0.1.0
 
       - name: Enforce lstn policy
-        uses: garnet-org/lstn-gh-action@0.0.1
+        uses: garnet-org/lstn-policy@main
         with:
           workdir: '.'
           apply-policy: true
