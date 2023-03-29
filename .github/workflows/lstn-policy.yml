@@ -1,4 +1,4 @@
-name: Example workflow using lstn Docker action
+name: lstn policy
 on:
   push: 
   pull_request:
@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: lstn scan
-        uses: garnet-org/lstn-gh-action@0.0.1
+        uses: garnet-org/lstn-policy@main
         with:
           lstn-command: 'scan'
           workdir: '.'
@@ -22,11 +22,11 @@ jobs:
         run: cat lstn-output.json
 
       - name: lstn policy
-        uses: garnet-org/lstn-gh-action@0.0.1
+        uses: garnet-org/lstn-policy@main
         with:
           apply-policy: true
           rules-file: 'rules.yml'
-          rule-name: 'block_priority_critical'
+          rule-name: 'ignore_priority_medium'
           
-      - name: Run npm install (test)
-        run: echo "Installing dependencies..."
+      - name: Run npm install
+        run: echo "Installing dependencies..." && npm install .
