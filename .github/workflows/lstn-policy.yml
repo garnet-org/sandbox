@@ -12,22 +12,8 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v3
 
-      - name: lstn scan
-        uses: garnet-org/lstn-policy@v0.0.3
-        with:
-          lstn-command: 'scan'
-          workdir: '.'
-          apply-policy: false
-
-      - name: Display lstn verdicts
-        run: cat lstn-output.json
-
       - name: lstn policy
         uses: garnet-org/lstn-policy@v0.0.3
-        with:
-          apply-policy: true
-          rules-file: 'rules.yml'
-          rule-name: 'ignore_priority_medium'
           
       - name: Run npm install
         run: echo "Installing dependencies..." && npm install .
