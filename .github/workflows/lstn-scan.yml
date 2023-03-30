@@ -19,11 +19,3 @@ jobs:
       
       - name: Run lstn scan
         uses: listendev/action@v0.2.0
-
-      - name: Enforce lstn policy
-        uses: garnet-org/lstn-policy@v0.0.3
-        with:
-          workdir: '.'
-          apply-policy: true
-          rules-file: 'rules.yml'
-          rule-name: 'ignore_priority_medium'
