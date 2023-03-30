@@ -1,8 +1,7 @@
 name: lstn policy
 on:
-  push: 
   pull_request:
-    branches: ["main"]
+    branches: ["*"]
 
 jobs:
   lstn-docker-e2e:
@@ -17,5 +16,3 @@ jobs:
         with:
           rule-name: 'block_node_gyp_execution'
           
-      - name: Run npm install
-        run: echo "Installing dependencies..." && npm install .
