@@ -1,7 +1,5 @@
 name: lstn policy
 on:
- # push: 
- #   branches: ["main"]
   pull_request:
     branches: ["*"]
 
@@ -18,5 +16,3 @@ jobs:
         with:
           rule-name: 'ignore_priority_medium'
           
-      - name: Run npm install
-        run: echo "Installing dependencies..." && npm install .
