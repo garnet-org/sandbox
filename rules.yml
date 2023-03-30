@@ -24,3 +24,12 @@ rules:
   - name: ignore_process_spawn
     query: .[] | .verdicts[]? | select(.message == "npm install spawned a process")
     behavior: ignore
+    
+    
+  - name: ignore_node_gyp_execution
+    query: .[] | .verdicts[]? | select(.metadata.commandline | contains("node-gyp"))
+    behavior: ignore
+      
+  - name: ignore_specific_package_and_version
+    query: .[] | select(.name == "<package-name>" and .version == "<package-version>")
+    behavior: ignore
