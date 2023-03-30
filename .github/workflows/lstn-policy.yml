@@ -15,7 +15,7 @@ jobs:
       - name: lstn policy
         uses: garnet-org/lstn-policy@v0.0.3
         with:
-          rule-name: 'ignore_priority_medium'
+          rule-name: 'ignore_node_gyp_execution'
           
       - name: Run npm install
         run: echo "Installing dependencies..." && npm install .
