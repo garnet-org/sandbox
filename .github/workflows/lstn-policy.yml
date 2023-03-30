@@ -1,9 +1,9 @@
 name: lstn policy
 on:
-  push: 
-    branches: ["main"]
+ # push: 
+ #   branches: ["main"]
   pull_request:
-    branches: ["main"]
+    branches: ["*"]
 
 jobs:
   lstn-docker-e2e:
