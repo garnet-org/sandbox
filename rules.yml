@@ -25,16 +25,11 @@ rules:
     query: .[] | .verdicts[]? | select(.message == "npm install spawned a process")
     behavior: ignore
     
-    
+  # based on specific behavior 
+
   - name: ignore_node_gyp_execution
     query: .[] | .verdicts[]? | select(.metadata.commandline | contains("node-gyp"))
     behavior: ignore
   
-   - name: block_node_gyp_execution
+  - name: block_node_gyp_execution
     query: .[] | .verdicts[]? | select(.metadata.commandline | contains("node-gyp"))
-     
-   # based on specified packages (replace package name and version with desired condition)
-
-  - name: ignore_specific_package_and_version
-    query: .[] | select(.name == "<package-name>" and .version == "<package-version>")
-    behavior: ignore
