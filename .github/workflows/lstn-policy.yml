@@ -16,6 +16,7 @@ jobs:
         uses: garnet-org/lstn-policy@v0.0.3
         with:
           rule-name: block_priority_critical
+
           
       - name: Run npm install
         run: echo "Installing dependencies..." && npm install .
