@@ -1,6 +1,8 @@
 # listen.dev demos :dolphin:
 > PoCs for lstn workflows
 
+[![lstn](https://github.com/garnet-org/demos/actions/workflows/lstn.yml/badge.svg?branch=main)](https://github.com/garnet-org/demos/actions/workflows/lstn.yml)
+
 ### Intro
 
 This repo demonstrates the use cases that `lstn` provides for JavaScript projects. It covers all core workflows currently supported ie.
