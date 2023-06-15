@@ -19,3 +19,5 @@ jobs:
       
       - name: Run lstn scan
         uses: listendev/action@v0.2.0
+        with:
+          workdir: "./src"
