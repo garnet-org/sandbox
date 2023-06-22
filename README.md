@@ -1,11 +1,11 @@
-# listen.dev demos :dolphin:
+# listen.dev demos 
 [![lstn](https://github.com/garnet-org/demos/actions/workflows/lstn.yml/badge.svg?branch=main)](https://github.com/garnet-org/demos/actions/workflows/lstn.yml)
 [![Release Notes](https://img.shields.io/github/release/listendev/action)](https://github.com/listendev/action/releases)
 [![](https://dcbadge.vercel.app/api/server/Tmavx64a?compact=true&style=flat)](https://discord.gg/Tmavx64a)
 
-> ⚡ Understand your dependencies through behavioral monitoring & prevent supply chain attacks before they impact you. ⚡
+> Understand your dependencies through behavioral monitoring & prevent supply chain attacks before they impact you. ⚡
 
-## 👋 Intro
+## :dolphin: Intro
 
 This repo demonstrates an end-to-end workflow for using `lstn` with JS/TS projects ie. 
 
