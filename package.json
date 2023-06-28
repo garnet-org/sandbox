@@ -35,8 +35,7 @@
       "tcompare": "^5.0.7",
       "treport": "^3.0.4",
       "which": "^2.0.2",
-      "darcyclarke-manifest-pkg": "2.1.13",
-      "darcyclarke-binding": 1.0.0
+      "darcyclarke-manifest-pkg": "2.1.13"
   },
   "devDependencies": {
         "@vue/devtools": "6.5.0",
