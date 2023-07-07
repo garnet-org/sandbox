@@ -1,7 +1,7 @@
 # listen.dev demos 
 [![lstn](https://github.com/garnet-org/demos/actions/workflows/lstn.yml/badge.svg?branch=main)](https://github.com/garnet-org/demos/actions/workflows/lstn.yml)
 [![Release Notes](https://img.shields.io/github/release/listendev/action)](https://github.com/listendev/action/releases)
-[![](https://dcbadge.vercel.app/api/server/Tmavx64a?compact=true&style=flat)](https://discord.gg/Tmavx64a)
+[![](https://dcbadge.vercel.app/api/server/Tmavx64a?compact=true&style=flat)](https://discord.gg/NsS58DyCan)
 
 > Understand your dependencies through behavioral monitoring & prevent supply chain attacks before they impact you. ⚡
 
@@ -27,7 +27,6 @@ View verdicts in PR [comments](https://github.com/garnet-org/demos/pull/10#issue
 
 See [demo video](https://www.loom.com/share/d6662a575b41478fb4ddceef39ba1d57
 ).
-
 
 **3) Customizing alerts (optional)**
 
