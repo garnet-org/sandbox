@@ -37,8 +37,7 @@
     "node-preload": "^0.2.1",
     "process-on-spawn": "^1.0.0",
     "ts-node": "^8.5.2",
-    "typescript": "^3.7.2",
-    "jq": "1.7.2"
+    "typescript": "^3.7.2"
   },
   "optionalDependencies": {
     "fsevents": "^2.3.2"
