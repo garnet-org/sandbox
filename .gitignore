@@ -1,2 +1,5 @@
 .DS_Store
 install.sh
+scratch
+node_modules
+.env
