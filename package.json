@@ -11,7 +11,6 @@
     "@isaacs/import-jsx": "^4.0.1",
     "@types/react": "^17.0.52",
     "chokidar": "^3.3.0",
-    "findit": "^2.0.0",
     "which": "^2.0.2",
     "darcyclarke-manifest-pkg": "2.1.13",
     "aws-sdk": "^2.1031.0",
