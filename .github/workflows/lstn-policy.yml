@@ -1,7 +1,7 @@
 name: lstn policy
 on:
   pull_request:
-    branches: ["*"]
+    branches: ["policy-test"]
 
 jobs:
   lstn-docker-e2e:

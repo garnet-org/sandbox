@@ -19,3 +19,5 @@ jobs:
       
       - name: Run lstn scan (static)
         uses: listendev/action@v0.2.1
+        with:
+        - lstn: "v0.7.0"
