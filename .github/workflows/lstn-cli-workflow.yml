@@ -3,7 +3,7 @@ name: Example workflow using lstn CLI
 on:
   #push: 
   pull_request:
-    branches: ["main"]
+    branches: ["test"]
 
 env:
   LSTN_ENDPOINT: https://npm.listen.dev
