@@ -20,4 +20,4 @@ jobs:
       - name: Run lstn scan (dynamic)
         uses: listendev/action@v0.2.0
         with:
-        - lstn: "v0.6.0"
+         lstn: "v0.6.0"
