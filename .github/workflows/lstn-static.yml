@@ -1,4 +1,4 @@
-name: lstn
+name: lstn scan v2
 
 on:
   pull_request:
@@ -10,11 +10,12 @@ permissions:
 
 jobs:
   lstn:
-    name: "lstn dependency scan"
+    name: "lstn static scan"
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out the source code
+      - name: Clone repo
         uses: actions/checkout@v3
-      - uses: listendev/action@v0.2.1
-      - uses: listendev/action@v0.2.0
+      
+      - name: Run lstn scan (static)
+        uses: listendev/action@v0.2.1

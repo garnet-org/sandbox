@@ -1,4 +1,4 @@
-name: lstn scan
+name: lstn scan v1
 
 on:
   pull_request:
@@ -10,12 +10,12 @@ permissions:
 
 jobs:
   lstn:
-    name: "lstn"
+    name: "lstn dynamic scan"
     runs-on: ubuntu-latest
 
     steps:
       - name: Clone repo
         uses: actions/checkout@v3
       
-      - name: Run lstn scan
+      - name: Run lstn scan (dynamic)
         uses: listendev/action@v0.2.0
