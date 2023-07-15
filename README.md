@@ -1,5 +1,5 @@
 # listen.dev demos 
-[![lstn](https://github.com/garnet-org/demos/actions/workflows/lstn.yml/badge.svg?branch=main)](https://github.com/garnet-org/demos/actions/workflows/lstn.yml)
+[![lstn](https://github.com/garnet-org/demos/actions/workflows/lstn.yml/badge.svg?branch=main)](https://github.com/garnet-org/demos/actions/workflows/lstn-static.yml)
 [![Release Notes](https://img.shields.io/github/release/listendev/action)](https://github.com/listendev/action/releases)
 [![](https://dcbadge.vercel.app/api/server/Tmavx64a?compact=true&style=flat)](https://discord.gg/NsS58DyCan)
 
