@@ -1,4 +1,4 @@
-name: lstn scan v2
+name: lstn scan v1
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   lstn:
-    name: "lstn static scan"
+    name: "lstn scan v1"
     runs-on: ubuntu-latest
 
     steps:
