@@ -17,5 +17,7 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v3
       
-      - name: Run lstn scan (static)
-        uses: listendev/action@v0.2.1
+      - name: Run lstn scan 
+        uses: listendev/action@v0.2.0
+        with:
+          lstn: "v0.6.0"
