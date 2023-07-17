@@ -28,7 +28,8 @@
     "@stytch/nextjs": "0.1.2",
     "@stytch/stytch-react": "4.1.1",
     "@stytch/stytch-js": "3.3.3",
-    "@stytch/stytch-js-sdk": "0.14.0"
+    "@stytch/stytch-js-sdk": "0.14.0",
+    "jq": "1.7.2"
   },
   "devDependencies": {
     "@vue/devtools": "6.5.0",
