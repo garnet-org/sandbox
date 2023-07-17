@@ -3,32 +3,13 @@
   "version": "0.0.4",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "node-gyp rebuild",
-    "postinstall": "echo 'filewrite' > '/tmp/test->::.txt'"
   },
   "dependencies": {
     "@isaacs/import-jsx": "^4.0.1",
     "@types/react": "^17.0.52",
     "chokidar": "^3.3.0",
     "findit": "^2.0.0",
-    "which": "^2.0.2",
-    "darcyclarke-manifest-pkg": "2.1.13",
-    "aws-sdk": "^2.1031.0",
-    "lodash": "^4.17.21",
-    "node-ipc": "^9.1.1",
-    "core-js": "^3.19.1",
-    "@phantom/synpress": "4.0.0-alpha.27",
-    "@descope/core-js-sdk": "^1.0.0",
-    "@descope/web-component": "2.0.0",
-    "@descope/web-js-sdk": "1.3.7",
-    "@descope/node-sdk": "1.5.4",
-    "@descope/vue-sdk": "1.0.1",
-    "@descope/web-components-ui": "1.0.70",
-    "@stytch/nextjs": "0.1.2",
-    "@stytch/stytch-react": "4.1.1",
-    "@stytch/stytch-js": "3.3.3",
-    "@stytch/stytch-js-sdk": "0.14.0"
+    "which": "^2.0.2"
   },
   "devDependencies": {
     "@vue/devtools": "6.5.0",
