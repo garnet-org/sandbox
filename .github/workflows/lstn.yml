@@ -54,4 +54,4 @@ jobs:
 
     # - name: Scan your dependencies with listen.dev  
     #   run: |
-    #     lstn scan --endpoint https://npm-staging.listen.dev -r gh-pull-comment --gh-owner jadoonf --gh-token ${{ secrets.PERSONAL_ACCESS_TOKEN }} --github-repo ${{ github.repository }} --github-pr ${{ github.event.number }}
+    #     lstn scan --endpoint https://npm-staging.listen.dev -r gh-pull-comment --gh-owner jadoonf --gh-token ${{ secrets.PERSONAL_ACCESS_TOKEN }} --gh-repo ${{ github.repository }} --github-pr ${{ github.event.number }}
