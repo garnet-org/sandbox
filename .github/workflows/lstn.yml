@@ -18,6 +18,7 @@ jobs:
 
       - name: Scan your dependencies with the listen.dev CLI
         uses: listendev/action@v0.2.1
+        with:
           lstn_flags: "--endpoint https://npm-staging.listen.dev"
           
           
