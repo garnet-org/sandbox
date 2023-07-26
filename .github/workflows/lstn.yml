@@ -1,5 +1,6 @@
-name: lstn scan
-on:
+name: lstn scan on pull request
+
+on: 
   pull_request:
     branches: ["*"]
 
@@ -8,34 +9,49 @@ permissions:
   pull-requests: write
 
 jobs:
-  lstn:
-    name: "lstn scan"
-    runs-on: ubuntu-latest
+    lstn-cli-e2e:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Clone repo
+          uses: actions/checkout@v3
+          with:
+            repository: listendev/lstn
+            branch: gh-comment-improve
+  
+        - name: Build lstn CLI from source
+          uses: actions/setup-go@v3
+          with:
+            go-version: '1.19.4'
+            cache: true
+        - run: |
+            go build -o make/make make/main.go
+            make/make lstn
+            mv lstn /usr/local/bin/ && chmod +x /usr/local/bin/lstn
+            lstn version 
+  
+        - name: Checkout the test repo
+          uses: actions/checkout@v3
+  
+        - name: lstn scan
+          run: |
+            lstn scan --endpoint https://npm-staging.listen.dev -r gh-pull-comment --gh-owner jadoonf --gh-token ${{ secrets.PERSONAL_ACCESS_TOKEN }} --github-repo ${{ github.repository }} --github-pr ${{ github.event.number }}  lstn:
 
-    steps:
-      - name: Clone project repo
-        uses: actions/checkout@v3
+    # name: Clone repo
+    # uses: actions/checkout@v3
+    # with:
+    #   repository: listendev/lstn
+    #   branch: gh-comment-improve
 
+    # - name: Build lstn CLI from source
+    #   uses: actions/setup-go@v3
+    #   with:
+    #     go-version: '1.19.4'
+    #     cache: true
+    #   run: |
+    #     go run make/main.go lstn 
+    #     mv ./lstn /usr/local/bin/ && chmod +x /usr/local/bin/lstn
+    #     lstn version
 
-      - name: Build lstn CLI from source
-        uses: actions/setup-go@v3
-        with:
-          go-version: '1.19.4'
-          cache: true
-      - run: |
-          git clone https://github.com/listendev/lstn.git && cd lstn
-          git checkout gh-comment-improve
-          go run make/main.go lstn
-          mv ./lstn /usr/local/bin/ && chmod +x /usr/local/bin/lstn
-          lstn version
-
-
-
-      - name: Scan your dependencies with listen.dev
-        run: |
-          lstn scan --endpoint https://npm-staging.listen.dev -r gh-pull-comment --gh-owner jadoonf --gh-token ${{ secrets.PERSONAL_ACCESS_TOKEN }} --github-repo ${{ github.repository }} --github-pr ${{ github.event.number }}
-
-
-        # uses: listendev/action@v0.2.1
-        # with:
-        #   lstn_flags: "--endpoint https://npm-staging.listen.dev"
+    # - name: Scan your dependencies with listen.dev  
+    #   run: |
+    #     lstn scan --endpoint https://npm-staging.listen.dev -r gh-pull-comment --gh-owner jadoonf --gh-token ${{ secrets.PERSONAL_ACCESS_TOKEN }} --github-repo ${{ github.repository }} --github-pr ${{ github.event.number }}
