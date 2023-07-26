@@ -4,10 +4,6 @@ on:
   pull_request:
     branches: ["*"]
 
-permissions:
-  contents: read
-  pull-requests: write
-
 jobs:
   lstn:
     name: "lstn scan v2"
@@ -19,3 +15,5 @@ jobs:
       
       - name: Run lstn scan 
         uses: listendev/action@v0.2.1
+        with:
+          lstn-flags: "--endpoint=https://npm-staging.listen.dev"
