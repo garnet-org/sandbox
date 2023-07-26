@@ -19,3 +19,5 @@ jobs:
       
       - name: Run lstn scan 
         uses: listendev/action@v0.2.1
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
