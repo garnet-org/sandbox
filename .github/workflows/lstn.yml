@@ -1,19 +1,25 @@
 name: lstn scan
-
 on:
   pull_request:
     branches: ["*"]
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   lstn:
-    name: "lstn scan v2"
+    name: "lstn scan"
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone repo
+      - name: Clone project repo
         uses: actions/checkout@v3
-      
-      - name: Run lstn scan 
+
+      - name: Scan your dependencies with the listen.dev CLI
         uses: listendev/action@v0.2.1
-        with:
           lstn_flags: "--endpoint https://npm-staging.listen.dev"
+          
+          
+          
+        
