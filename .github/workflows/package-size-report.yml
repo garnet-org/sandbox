@@ -1,21 +1,21 @@
-name: Package Size Report
+# name: Package Size Report
 
-on:
-  pull_request:
+# on:
+#   pull_request:
     
-jobs:
-  pkg-size-report:
-    name: Package Size Report
-    runs-on: ubuntu-latest
+# jobs:
+#   pkg-size-report:
+#     name: Package Size Report
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14' 
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '14' 
 
-      - name: Package size report
-        uses: pkg-size/action@v1
+#       - name: Package size report
+#         uses: pkg-size/action@v1
