@@ -17,5 +17,3 @@ jobs:
         uses: listendev/action@v0.2.1
         with:
           lstn_flags: "--endpoint https://npm-staging.listen.dev"
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
