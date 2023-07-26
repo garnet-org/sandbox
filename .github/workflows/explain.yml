@@ -1,0 +1,20 @@
+name: Explain PR
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+env:
+  DIFF: ${{ compare(github.base_ref, github.head_ref) }}
+
+jobs:
+  explain-diff:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Explain Diff
+      id: explain
+      uses: actions/lstn-ai-action
+      with:
+        diff: ${{ env.DIFF }}
+        apikey: ${{ secrets.OPENAI_SECRET_KEY }}

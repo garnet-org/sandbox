@@ -16,11 +16,25 @@ jobs:
       - name: Clone project repo
         uses: actions/checkout@v3
 
-      - name: Scan your dependencies with the listen.dev CLI
-        uses: listendev/action@v0.2.1
+      - name: Setup Golang
+        uses: actions/setup-go@v3
         with:
-          lstn_flags: "--endpoint https://npm-staging.listen.dev"
-          
-          
-          
-        
+          go-version: '1.20.6'
+          cache: true
+
+      - name: Build lstn CLI from preview branch
+        run: |
+          git clone https://github.com/listendev/lstn.git && cd lstn
+          git checkout gh-comment-improve
+          go run make/main.go lstn
+          mv ./lstn /usr/local/bin/ && chmod +x /usr/local/bin/lstn
+          lstn version
+
+      - name: Scan your dependencies with listen.dev
+        run: |
+          lstn scan --endpoint https://npm-staging.listen.dev -r gh-pull-comment --gh-owner jadoonf --gh-token ${{ secrets.PERSONAL_ACCESS_TOKEN }} --github-repo ${{ github.repository }} --github-pr ${{ github.event.number }}
+
+
+        # uses: listendev/action@v0.2.1
+        # with:
+        #   lstn_flags: "--endpoint https://npm-staging.listen.dev"
