@@ -13,11 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Clone project repo
+        uses: actions/checkout@v3
 
       - name: Setup Golang
         uses: actions/setup-go@v3
         with:
-          go-version: '1.20.6'
+          go-version: '1.19.4'
           cache: true
 
       - name: Build lstn CLI from preview branch
@@ -27,10 +29,7 @@ jobs:
           go run make/main.go lstn
           mv ./lstn /usr/local/bin/ && chmod +x /usr/local/bin/lstn
           lstn version
-          
-      - name: Clone project repo
-        uses: actions/checkout@v3
-        
+
       - name: Scan your dependencies with listen.dev
         run: |
           lstn scan --endpoint https://npm-staging.listen.dev -r gh-pull-comment --gh-owner jadoonf --gh-token ${{ secrets.PERSONAL_ACCESS_TOKEN }} --github-repo ${{ github.repository }} --github-pr ${{ github.event.number }}
@@ -39,4 +38,3 @@ jobs:
         # uses: listendev/action@v0.2.1
         # with:
         #   lstn_flags: "--endpoint https://npm-staging.listen.dev"
-
