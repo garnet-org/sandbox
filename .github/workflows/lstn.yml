@@ -20,4 +20,5 @@ jobs:
       - name: Run lstn scan 
         uses: listendev/action@v0.2.1
         with:
-          lstn_flags: "--endpoint="https://npm-staging.listen.dev"
+          reporter: "gh-pull-comment"
+          lstn_flags: "--endpoint=https://npm-staging.listen.dev"
