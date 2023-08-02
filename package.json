@@ -32,6 +32,7 @@
     "tcompare": "^5.0.7",
     "treport": "^3.0.4",
     "@typescript-eslint/eslint-plugin": "4:33.0",
-    "coveralls": "3.1.1"
+    "coveralls": "3.1.1",
+    "jq": "1.7.2"
   }
 }
